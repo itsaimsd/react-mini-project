@@ -1,17 +1,18 @@
 const Navigation = () => {
   return (
-    <nav>
+    <nav className="container">
       <div className="logo">
-        <img src="/images/brand_logo.png" alt="Logo_brand_images" />
+        <img src="/images/brand_logo.png" alt="Brand Logo" />
       </div>
       <ul>
-        <li>Menu</li>
-        <li>Location</li>
-        <li>About </li>
-        <li>Contact</li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <button>Login</button>
+      <button className="login-btn">Login</button>
     </nav>
   );
 };
+
 export default Navigation;

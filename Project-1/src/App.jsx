@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div>
       <Navigation />
-      <HeroSection /> 
+      <HeroSection />
     </div>
   );
 };
