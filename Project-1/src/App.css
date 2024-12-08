@@ -16,8 +16,6 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Remove scroll */
-  height: 100vh; /* Ensure full viewport height */
   background-color: var(--light-gray);
   color: var(--secondary-color);
 }
@@ -28,11 +26,11 @@ body {
   margin: 0 auto;
 }
 
-/* Navigation Bar */
+/* Header and Navigation */
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Aligns everything vertically */
+  align-items: center;
   padding: 0 20px;
   height: 72px;
   background: white;
@@ -42,43 +40,97 @@ nav {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-nav .logo img {
-  height: 50px; /* Adjust logo size */
-}
-
 nav ul {
   display: flex;
   list-style: none;
   gap: 24px;
-  align-items: center;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: var(--secondary-color);
+nav ul li {
   font-weight: 500;
-  transition: color 0.3s;
+  cursor: pointer;
 }
 
-nav ul li a:hover {
-  color: var(--primary-color);
+nav .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+nav .hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--secondary-color);
+  transition: 0.3s;
 }
 
 .login-btn {
   background: var(--primary-color);
-  color: white; 
+  color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
 }
 
-.login-btn:hover {
-  background: #a1141d;
-  transform: scale(1.05);
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 2000;
+  transition: 0.3s ease;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sidebar .login-btn {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Overlay for Sidebar */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
 }
 
 /* Hero Section */
@@ -185,22 +237,12 @@ nav ul li a:hover {
 
 /* For tablets and below */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    height: auto;
-    padding: 10px 20px;
-  }
-
   nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+    display: none;
   }
 
-  .login-btn {
-    margin-top: 10px;
-    width: 100%;
-    text-align: center;
+  .hamburger {
+    display: flex;
   }
 
   .hero {
@@ -298,7 +340,7 @@ nav ul li a:hover {
     height: 24px;
   }
 
-  .container {
+  .container { 
     width: 100%;
     padding: 0 10px;
   }

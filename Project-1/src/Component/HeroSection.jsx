@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="hero-image">
         <img src="/images/shoe_image.png" alt="Shoe Image" />
       </div>
-    </main>
+    </main>   
   );
 };
 
