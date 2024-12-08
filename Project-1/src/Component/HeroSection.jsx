@@ -5,7 +5,7 @@ const HeroSection = () => {
         <h1>YOUR FEET DESERVE THE BEST</h1>
         <p>
           Your feet deserve the best, and we’re here to help you find the perfect shoes for any
-          occasion. Experience comfort and style with every step.
+          occasion. Experience comfort and style with every.
         </p>
 
         <div className="hero-btn">
