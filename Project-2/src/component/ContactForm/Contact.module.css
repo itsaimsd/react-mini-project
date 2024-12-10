@@ -4,3 +4,21 @@
   margin: 0 auto;
 }
 
+.top_btn {
+  display: flex;
+  gap: 32px;
+}
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.form_control {
+  display: flex;
+  flex-direction: column;
+  width: 100;
+}
+.form_control input {
+ height: 40px;
+ padding: 0 8px;
+}
